@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openagent.local/spec/canonical-event.v0.1.schema.json",
+  "title": "OpenAgent Canonical Event v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "origin",
+    "publisher",
+    "task_id",
+    "seq",
+    "op",
+    "expires_at",
+    "topics",
+    "taxonomy",
+    "conf",
+    "summary",
+    "detail_ref",
+    "sig"
+  ],
+  "properties": {
+    "v": {
+      "type": "string",
+      "const": "0.2",
+      "description": "Protocol version."
+    },
+    "origin": {
+      "type": "string",
+      "pattern": "^did:key:[A-Za-z0-9]+$",
+      "minLength": 12,
+      "maxLength": 128
+    },
+    "publisher": {
+      "type": "string",
+      "pattern": "^did:key:[A-Za-z0-9]+$",
+      "minLength": 12,
+      "maxLength": 128
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^b64:[A-Za-z0-9+/=_-]{6,128}$",
+      "minLength": 10,
+      "maxLength": 132
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647
+    },
+    "op": {
+      "type": "string",
+      "enum": [
+        "UPSERT",
+        "COMPLETE",
+        "WITHDRAW"
+      ]
+    },
+    "expires_at": {
+      "type": "integer",
+      "minimum": 1700000000000,
+      "description": "Epoch milliseconds."
+    },
+    "topics": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^agentnet/v[0-9]+(/[a-z0-9_]+)+$",
+        "minLength": 12,
+        "maxLength": 120
+      }
+    },
+    "taxonomy": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+(\\.[a-z0-9_]+)+$",
+      "minLength": 3,
+      "maxLength": 96
+    },
+    "conf": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 280
+    },
+    "detail_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512
+    },
+    "sig": {
+      "type": "string",
+      "pattern": "^b64:[A-Za-z0-9+/=_-]{16,1024}$",
+      "minLength": 20,
+      "maxLength": 1030
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "op": {
+            "const": "UPSERT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "summary": {
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}
