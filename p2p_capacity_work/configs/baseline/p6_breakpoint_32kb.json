@@ -1,0 +1,43 @@
+{
+  "name": "p6_breakpoint_global_probe",
+  "variant": "ablation_no_semantic_public_topic",
+  "payload_bytes": 0,
+  "latency_mode": "global_probe",
+  "runtime_rounds": 5,
+  "message_budget": 0,
+  "observe_sec": 45,
+  "stabilize_sec": 180,
+  "cooldown_sec": 90,
+  "poll_sec": 0.5,
+  "cpu_sample_sec": 1.0,
+  "nodes": [40, 60, 80, 100, 120],
+  "repetitions": 3,
+  "retry_budget": 1,
+  "remote": {
+    "host": "zhao@172.31.100.223",
+    "port": 22,
+    "password": "zhao123",
+    "sudo_password": "zhao123",
+    "base_dir": "/home/zhao/openagent-breakpoint-p6"
+  },
+  "node_args": [
+    "--neighbor-target",
+    "6",
+    "--neighbor-hard-cap",
+    "8",
+    "--same-topic-neighbor-min",
+    "3",
+    "--same-topic-mesh-min",
+    "4",
+    "--neighbor-low-watermark",
+    "4",
+    "--topic-replenish-batch",
+    "1",
+    "--topic-replenish-cooldown",
+    "20s",
+    "--bootstrap-connect-count",
+    "2",
+    "--bootstrap-candidate-count",
+    "8"
+  ]
+}
