@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-04-07T01:36:55.810800+00:00",
+  "evidence_pack_root": "/Users/med/Desktop/OpenAgent/P2P大规模/results/workload_char_public_discovery_two_stage_n100_evidence_pack_20260406T012900Z",
+  "aggregate_dir": "/Users/med/Desktop/OpenAgent/P2P大规模/results/workload_char_public_discovery_two_stage_n100_evidence_pack_20260406T012900Z/aggregate",
+  "inputs": {
+    "evidence_pack_summary_json": "/Users/med/Desktop/OpenAgent/P2P大规模/results/workload_char_public_discovery_two_stage_n100_evidence_pack_20260406T012900Z/aggregate/evidence_pack_summary.json",
+    "multi_seed_summary_csv": "/Users/med/Desktop/OpenAgent/P2P大规模/results/workload_char_public_discovery_two_stage_n100_evidence_pack_20260406T012900Z/aggregate/multi_seed_summary.csv",
+    "constraint_sweep_summary_csv": "/Users/med/Desktop/OpenAgent/P2P大规模/results/workload_char_public_discovery_two_stage_n100_evidence_pack_20260406T012900Z/aggregate/constraint_sweep_summary.csv",
+    "run_matrix_csv": "/Users/med/Desktop/OpenAgent/P2P大规模/results/workload_char_public_discovery_two_stage_n100_evidence_pack_20260406T012900Z/aggregate/run_matrix.csv"
+  },
+  "outputs_dir": "/Users/med/Desktop/OpenAgent/P2P大规模/reports/sparse_demand_paper_pack_20260407"
+}

@@ -1,0 +1,8 @@
+| section | seed | mode | visible_mean | coarse_mean | full_mean | p_coarse_mean | p_full_mean | coarse_to_full_mean | full_match_available_rate | zero_full_match_rate |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| multi_seed_medium | 20260402 | medium | 100 | 8.02 | 1.995 | 0.0802 | 0.01995 | 0.26184 | 0.99 | 0.01 |
+| multi_seed_medium | 20260412 | medium | 100 | 8.13 | 1.84 | 0.0813 | 0.0184 | 0.23781 | 1 | 0 |
+| multi_seed_medium | 20260422 | medium | 100 | 8.635 | 2.15 | 0.08635 | 0.0215 | 0.26383 | 0.995 | 0.005 |
+| constraint_sweep_seed20260402 | 20260402 | loose | 100 | 8.02 | 5.475 | 0.0802 | 0.05475 | 0.68181 | 1 | 0 |
+| constraint_sweep_seed20260402 | 20260402 | medium | 100 | 8.02 | 1.995 | 0.0802 | 0.01995 | 0.26184 | 0.99 | 0.01 |
+| constraint_sweep_seed20260402 | 20260402 | tight | 100 | 8.02 | 1.185 | 0.0802 | 0.01185 | 0.16075 | 0.985 | 0.015 |

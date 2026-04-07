@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Sparse-demand main results table (multi-seed + constraint sweep).}
+\label{tab:sparse_demand_main}
+\begin{tabular}{lllrrrrrrrr}
+\toprule
+section & seed & mode & visible & coarse & full & $p_{coarse}$ & $p_{full}$ & coarse/full & full-avail & zero-full \\
+\midrule
+multi\_seed\_medium & 20260402 & medium & 100 & 8.02 & 1.995 & 0.0802 & 0.01995 & 0.26184 & 0.99 & 0.01 \\
+multi\_seed\_medium & 20260412 & medium & 100 & 8.13 & 1.84 & 0.0813 & 0.0184 & 0.23781 & 1 & 0 \\
+multi\_seed\_medium & 20260422 & medium & 100 & 8.635 & 2.15 & 0.08635 & 0.0215 & 0.26383 & 0.995 & 0.005 \\
+constraint\_sweep\_seed20260402 & 20260402 & loose & 100 & 8.02 & 5.475 & 0.0802 & 0.05475 & 0.68181 & 1 & 0 \\
+constraint\_sweep\_seed20260402 & 20260402 & medium & 100 & 8.02 & 1.995 & 0.0802 & 0.01995 & 0.26184 & 0.99 & 0.01 \\
+constraint\_sweep\_seed20260402 & 20260402 & tight & 100 & 8.02 & 1.185 & 0.0802 & 0.01185 & 0.16075 & 0.985 & 0.015 \\
+\bottomrule
+\end{tabular}
+\end{table*}

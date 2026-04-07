@@ -1,0 +1,6 @@
+% Sparse-demand subsection snippet
+Table~\ref{tab:sparse_demand_main} summarizes both the multi-seed robustness results (medium mode) and the constraint-tightness sweep (loose/medium/tight, fixed seed). The table shows that the two-stage deterministic pipeline consistently yields a strong contraction from coarse-level matches to full-level matches while maintaining high full-match availability.
+
+Figure~\ref{fig:sparse_funnel} visualizes a representative funnel (medium, seed 20260402), where visibility is broad but full matches are substantially fewer. Figure~\ref{fig:sparse_multiseed} further shows that $p_{coarse}$, $p_{full}$, and coarse-to-full ratios are stable across seeds. Figure~\ref{fig:sparse_sweep} demonstrates a monotonic drop in $p_{full}$ and coarse-to-full as constraints tighten.
+
+Overall, these results support the sparse-demand motivation: matching sparsity is structural and reproducible, rather than being induced by probabilistic pull behavior. Response-path observations are retained as secondary diagnostics and are not required for this conclusion.

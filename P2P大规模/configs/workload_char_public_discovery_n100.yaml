@@ -1,0 +1,60 @@
+experiment:
+  name: workload_char_public_discovery_n100
+  variant: ablation_no_semantic_public_topic
+  node_count: 100
+  requests: 200
+  payload_bytes: 32768
+  repetitions: 1
+  random_seed: 20260402
+  global_topic: openagent/v1/general
+  capability_tags:
+    - planner
+    - retriever
+    - tool-user
+    - coder
+    - memory
+    - vision
+    - verifier
+    - coordinator
+  capabilities_per_node: 2
+  pull_policy: probabilistic
+  pull_probability: 0.30
+  pull_topk: 5
+  declaration_observe_sec: 30.0
+  response_observe_sec: 20.0
+  poll_sec: 0.5
+  request_gap_sec: 0.2
+
+bootstrap:
+  bootstrap_timeout_sec: 1200
+  warmup_sec: 20
+  stabilization_min_sec: 60
+  stabilization_timeout_sec: 300
+  stabilization_sample_sec: 5.0
+
+remote:
+  host: ma@172.31.100.142
+  ssh_port: 30002
+  password: ma123
+  sudo_password: ma123
+  remote_tools_dir: /home/ma/discovery_workload_tools
+
+docker:
+  image: openagent-node:formal
+  api_base: 8500
+  p2p_base: 5500
+  seed_count: 4
+  batch_size_small: 10
+  batch_size_medium: 15
+  batch_pause_sec: 15
+  rendezvous: openagent/v1/dev
+  neighbor_target: 6
+  neighbor_hard_cap: 8
+  same_topic_neighbor_min: 3
+  same_topic_mesh_min: 4
+  neighbor_low_watermark: 4
+  bootstrap_connect_count: 2
+  bootstrap_candidate_count: 8
+  bootstrap_refresh_sec: 30
+  topic_replenish_batch: 1
+  topic_replenish_cooldown_sec: 20
